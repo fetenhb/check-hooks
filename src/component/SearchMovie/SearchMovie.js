@@ -6,8 +6,9 @@ const SearchMovie = ({nameSearch , setNameSearch, ratingSearch, setRatingSearch}
 
 
     return (
-        <div  >  
+        <div>  
             <form action="#" autocomplete="off" className='frm'  style={{display:'flex', justifyContent:'space-between'}}>
+         {/* --------------------------- welcome ------------------------- */}
             <svg viewBox="0 0 960 300">
         <symbol id="s-text">
           <text textAnchor="middle" x="50%" y="80%">Welcome</text>
@@ -20,6 +21,7 @@ const SearchMovie = ({nameSearch , setNameSearch, ratingSearch, setRatingSearch}
           <use xlinkHref="#s-text" className="text-copy" />
         </g>
       </svg>
+        {/* --------------------------- search by name ------------------------- */}
               <fieldset class="url" style={{marginRight:'150px', paddingTop:'50px'}}>
                  <input 
                     id="url" 
@@ -33,6 +35,8 @@ const SearchMovie = ({nameSearch , setNameSearch, ratingSearch, setRatingSearch}
                  <label for="url" className="lab" style={{marginRight:'150px', paddingTop:'50px'}}><i class="fa fa-search" aria-hidden="true"></i> Search</label>
                  <div class="after"></div>
               </fieldset>
+                {/* --------------------------- search by rate ------------------------- */}
+
               <div style={{marginTop:'10px', paddingTop:'50px'}}>
               <Rate rate={ratingSearch} setRatingSearch={setRatingSearch}/>
               </div>

@@ -50,11 +50,12 @@ setBackImg('');
 
     return (
         <div>
+                   {/* --------------------------- bouton add ------------------------- */}
+
                 <button class="glow-on-hover" type="button" onClick={handleShow}>ADD NEW MOVIE</button>
-
-
+                
+                   {/* --------------------------- modal add ------------------------- */}
                 <Modal show={show} onHide={handleClose} >
-        
                       <Modal.Body  className="my-modal"  >
                         <Modal.Title style={{color:'white' , marginBottom:'20px',fontSize:'50px'}} closeButton>Add movie</Modal.Title>
 
