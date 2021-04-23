@@ -1,5 +1,4 @@
 import React from 'react'
-
 const Rate = ({rate , setRatingSearch}) => {
     const stars = (rate) => {
         let startsTab = [];

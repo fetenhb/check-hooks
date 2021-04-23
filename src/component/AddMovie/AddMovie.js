@@ -48,6 +48,26 @@ setBackImg('');
 }
 
 
+const stars = (rate) => {
+   let startsTab = [];
+   for (let i=1 ; i<=5; i++){
+     if (i<=rate){
+         startsTab.push(<span 
+                          style={{ color: '#FFC83D', fontSize: '40px',  cursor: 'pointer'}}
+                          onClick={() => setRate(i)}
+                          >★</span>)
+     }
+     else {
+         startsTab.push(<span 
+                          style={{ color: '#FFC83D', fontSize: '40px',  cursor: 'pointer'}}
+                          onClick={() => setRate(i)}
+                          >☆</span>)
+     }
+   }
+   return startsTab;
+}
+
+
     return (
         <div>
                    {/* --------------------------- bouton add ------------------------- */}
@@ -80,7 +100,7 @@ setBackImg('');
                                    <label> posterUrl</label>
                                </div> 
                             </div>
-                               <div class="user-box">
+                               <div class="user-box" style={{marginLeft:'100px'}}>
                                 <textarea
                                    type="text" 
                                    name="description" 
@@ -132,22 +152,19 @@ setBackImg('');
                                    value={year} onChange={(e) => setYear (e.target.value)} />
                                  <label> year</label>
                               </div>
+                           
                               <div class="user-box">
-                               <input 
-                                   type="number" 
-                                   name="rate" 
-                                   required
-                                   value={rate} onChange={(e) => setRate (e.target.value)} />
-                                 <label>rate</label>
-                              </div>
-                             </div>
-                             <div class="user-box">
                                <input 
                                    type="text" 
                                    name="backImg" 
                                    required
                                    value={backImg} onChange={(e) => setBackImg (e.target.value)} />
                                  <label>background url</label>
+                              </div>
+                             </div>
+                             <div style={{marginLeft : '200px'}}>
+                             <div style={{marginLeft : '50px', color: '#03e9f4', fontSize: '30px'}}>rate</div>
+                              <div > {stars (rate)}</div>
                               </div>
                              <a href="#"  onClick={handleAdd}>
                                   <span></span>
@@ -171,5 +188,4 @@ setBackImg('');
         </div>
     )
 }
-
 export default AddMovie
